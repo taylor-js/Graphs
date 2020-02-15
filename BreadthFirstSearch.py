@@ -14,4 +14,4 @@ graph = {'A': set(['B', 'C']),
          'E': set(['B', 'F']),
          'F': set(['C', 'E'])}
 
-dfs(graph, 'A')
+bfs(graph, 'A')
