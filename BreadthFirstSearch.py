@@ -13,5 +13,4 @@ graph = {'A': set(['B', 'C']),
          'D': set(['B']),
          'E': set(['B', 'F']),
          'F': set(['C', 'E'])}
-
 print(bfs(graph, 'A'))
