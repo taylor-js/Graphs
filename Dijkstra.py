@@ -16,16 +16,16 @@ def dijkstra(graph, source):
                 seen[w] = vw_dist
                 heappush(priority_queue, (vw_dist,w))
                 predecessors[w] = V
-    return distances#, predecessors
+    return distances, predecessors
     
-g = {'A': ['B', 'C'],
-     'B': ['C', 'D'],
-     'C': ['A', 'B', 'D', 'E', 'F'],
-     'D': ['B', 'C', 'E', 'F'],
-     'E': ['F', 'D'],
-     'F': ['C', 'D', 'E']}
+g = {'A': set(['B', 'C']),
+     'B': set(['A', 'D', 'E']),
+     'C': set(['A', 'F']),
+     'D': set(['B']),
+     'E': set(['B', 'F']),
+     'F': set(['C', 'E'])}
 
-#print(g) # {'A': ['B', 'C'], 'B': ['C', 'D'], 'C': ['D'], 'D': ['C'], 'E': ['F'], 'F': ['C']}
-#print(dijkstra(g,'A'))# {'A': 0, 'B': 1, 'C': 1, 'D': 2}, {'B': 'A', 'C': 'A', 'D': 'B'}
+print(g) # {'A': ['B', 'C'], 'B': ['C', 'D'], 'C': ['D'], 'D': ['C'], 'E': ['F'], 'F': ['C']}
+print(dijkstra(g,'A'))# {'A': 0, 'B': 1, 'C': 1, 'D': 2}, {'B': 'A', 'C': 'A', 'D': 'B'}
 
 

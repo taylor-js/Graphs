@@ -1,10 +1,5 @@
 # Python program for Bellman-Ford's single source 
-# shortest path algorithm. 
-import matplotlib.pyplot as plt
-import networkx as nx
-from networkx import Graph
-
-
+# shortest path algorithm.
 from collections import defaultdict 
 
 # Class to represent a graph 
@@ -42,8 +37,8 @@ class Graph:
 			# the picked vertex. Consider only those vertices which are still in 
 			# queue 
 			for u, v, w in self.graph: 
-				if dist[u] != float("Inf") and dist[u] + w < dist[v]: 
-                    dist[v] = dist[u] + w 
+				if dist[u] != float("Inf") and dist[u] + w < dist[v]:
+					dist[v] = dist[u] + w
 
 		# Step 3: check for negative-weight cycles. The above step 
 		# guarantees shortest distances if graph doesn't contain 
@@ -51,14 +46,12 @@ class Graph:
 		# is a cycle. 
 
 		for u, v, w in self.graph: 
-            if dist[u] != float("Inf") and dist[u] + w < dist[v]: 
-                print ("Graph contains negative weight cycle")
-            return
-						
+			if dist[u] != float("Inf") and dist[u] + w < dist[v]: 
+				print ("Graph contains negative weight cycle")
 		# print all distance 
 		self.printArr(dist) 
-
-g = Graph(5) 
+		
+g = Graph(5)
 g.addEdge(0, 1, -1) 
 g.addEdge(0, 2, 4) 
 g.addEdge(1, 2, 3) 
@@ -67,8 +60,7 @@ g.addEdge(1, 4, 2)
 g.addEdge(3, 2, 5) 
 g.addEdge(3, 1, 1) 
 g.addEdge(4, 3, -3) 
-
 # Print the solution 
-g.BellmanFord(0) 
+g.BellmanFord(0)
 
 # This code is contributed by Neelam Yadav 
