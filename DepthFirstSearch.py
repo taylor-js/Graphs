@@ -1,10 +1,10 @@
-def dfs(graph, start, visited=None):
+def DepthFirstSearch(graph, start, visited=None):
     if visited is None:
         visited = set()
     visited.add(start)
     print(start)
     for next in graph[start] - visited:
-        dfs(graph, next, visited)
+        DepthFirstSearch(graph, next, visited)
     return visited
 
 graph = {'A': set(['B', 'C']),
@@ -13,6 +13,4 @@ graph = {'A': set(['B', 'C']),
          'D': set(['B']),
          'E': set(['B', 'F']),
          'F': set(['C', 'E'])}
-
-
-dfs(graph, 'A')
+DepthFirstSearch(graph, 'A')

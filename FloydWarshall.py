@@ -20,5 +20,5 @@ graph = [
     [inf, 4, 0, -2],
     [5, inf, 3, 0]
 ]
-
+print(graph)
 print(FloydWarshall(graph))

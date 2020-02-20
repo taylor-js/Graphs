@@ -1,5 +1,5 @@
 # Python program for Bellman-Ford's single source 
-# shortest path algorithm.
+# shortest path algorithm. Works with graphs that have negative edges with negative weights.
 from collections import defaultdict 
 
 # Class to represent a graph 
@@ -64,4 +64,3 @@ g.addEdge(4, 2, 2)
 g.addEdge(4, 1, -4)  
 # Print the solution 
 g.BellmanFord(0)
-# This code is contributed by Neelam Yadav 
