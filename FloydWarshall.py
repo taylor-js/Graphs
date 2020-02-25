@@ -22,3 +22,4 @@ graph = [
 ]
 print(graph)
 print(FloydWarshall(graph))
+#[[0, 4, 0, -3], [13, 0, 11, 8], [3, 4, 0, -2], [5, 7, 3, 0]]

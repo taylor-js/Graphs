@@ -25,14 +25,14 @@ class Graph:
     def Dijkstra(self, source):
         distances = {}
         predecessors = {}
-        seen = {source: 0}
+        seen = {source: 0} # seen is a dictionary with 
         priority_queue = [(0, source)]
 
         while priority_queue:
-            v_dist, vertex = heappop(priority_queue)
-            distances[vertex] = v_dist
+            v_dist, vertex = heappop(priority_queue) # 
+            distances[vertex] = v_dist # 
 
-            for w in self.graph[vertex]:
+            for w in self.graph[vertex]: # Iterate over every vertex in the graph
                 vw_dist = distances[vertex] + 1
                 if w not in seen or vw_dist < seen[w]:
                     seen[w] = vw_dist
