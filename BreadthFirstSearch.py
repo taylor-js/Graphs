@@ -5,7 +5,7 @@ from collections import defaultdict
 from heapq import heappush, heappop
 # This class represents a directed graph 
 # using adjacency list representation 
-class Graph: 
+class Graph:
 
 	# Constructor 
     def __init__(self,vertices): 
