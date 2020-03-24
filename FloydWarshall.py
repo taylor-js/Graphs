@@ -1,3 +1,11 @@
+### Evaluation
+
+#Space Complexity: O(V^2)
+
+#Worse Case Time Complexity: O(V^3)
+
+### Python implementation
+
 # A large value as infinity
 inf = 1e10 
 

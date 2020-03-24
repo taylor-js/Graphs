@@ -1,7 +1,6 @@
 # Python program for Dijkstra's single source 
 # shortest path algorithm.
 from heapq import heappush, heappop
-from collections import defaultdict 
 
 # Class to represent a graph 
 class Graph: 
@@ -25,15 +24,15 @@ class Graph:
     def Dijkstra(self, source):
         distances = {}
         predecessors = {}
-        seen = {source: 0} # seen is a dictionary with 
+        seen = {source: 0} # Source is zero [(0, 0)]
         priority_queue = [(0, source)]
-
+        
         while priority_queue:
-            v_dist, vertex = heappop(priority_queue) # 
-            distances[vertex] = v_dist # 
-
-            for w in self.graph[vertex]: # Iterate over every vertex in the graph
-                vw_dist = distances[vertex] + 1
+            v_dist, vertex = heappop(priority_queue) # 0 to 5 for both
+            distances[vertex] = v_dist # {0: 0, 1: 1, 3: 1, 2: 2, 4: 2, 5: 3}
+            
+            for w in self.graph[vertex]: # Iterate over every vertex in the graph recursively
+                vw_dist = distances[vertex] + 1 # set vertex weight
                 if w not in seen or vw_dist < seen[w]:
                     seen[w] = vw_dist
                     heappush(priority_queue, (vw_dist,w))
@@ -52,9 +51,8 @@ g.addEdge(2, 4, 3)
 g.addEdge(3, 4 ,7)
 g.addEdge(4, 6, 2)
 g.addEdge(5, 1, 1)
-g.addEdge(5, 6, 8)
-# Print the solution 
-g.Dijkstra(0)
+g.addEdge(5, 6, 8)# Print the solution 
+g.Dijkstra(8)
 
 
 #print(g) # {'A': ['B', 'C'], 'B': ['C', 'D'], 'C': ['D'], 'D': ['C'], 'E': ['F'], 'F': ['C']}

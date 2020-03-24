@@ -64,3 +64,4 @@ g.addEdge(4, 2, 2)
 g.addEdge(4, 1, -4)  
 # Print the solution 
 g.BellmanFord(0)
+

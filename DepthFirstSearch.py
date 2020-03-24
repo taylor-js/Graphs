@@ -1,4 +1,4 @@
-def DepthFirstSearch(graph, start, visited=None):
+def DepthFirstSearch(graph, start, visited=None): # pre order traversal
     if visited is None:
         visited = set()
     visited.add(start)
